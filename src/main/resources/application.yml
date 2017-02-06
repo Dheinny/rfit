@@ -1,0 +1,32 @@
+#DATASOURCE
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rfit
+    username: postgres
+    password: 123456
+    schema: public
+    validationQuery: select 1
+    testOnBorrow: true
+    tomcat:
+      maxActive: 5
+
+
+
+
+# FLYWAY (FlywayProperties)
+flyway:
+  enabled: true
+  encoding: UTF-8
+  locations: classpath:sqls
+  password: 123456
+  sql-migration-prefix: V
+  sql-migration-suffix: .sql
+  url: jdbc:postgresql://localhost:5432/rfit
+  user: postgres
+  clean-on-validation-error: true
+  schemas: public
+
+#SERVER
+server:
+  port: 6969
+  context-path: /rfit
